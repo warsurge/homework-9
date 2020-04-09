@@ -1,63 +1,116 @@
-// const questions = [
+const fs = require('fs')
+const inquirer = require('inquirer')
+const axios = require('axios')
+const util= require('util')
 
-// ];
+const writeFileAsync = util.promisify(fs.writeFile);
 
-// function writeToFile(fileName, data) {
-// }
+function promptUser(){
+return inquirer
+    .prompt([
+        {//user's GitHub profile
+        type: "input",
+        message: "What is your GitHub username?",
+        name: "username"
+        },
+        {//repo name
+        type: "input",
+        message: "What is the name of the repo?",
+        name: "repo"
+        },
+        {// Title
+        type: "input",
+        message: "What would you like for the title?",
+        name: "title"
+        },
+        {//Description
+        type: "input",
+        message: "Please put a description about your project.",
+        name: "description"
+        },
+        {//table of contents
+            type:"input",
+            message: "Do you want to add a Table of Contents?",
+            name: "table"
+        },
+        {//installation
+            type: "input",
+            message:"Write a brief summary on how to install your app.",
+            name: "install"
+        },
+        {//Usage
+        type: "input",
+        message: "Please write how you would use your app.",
+        name: "usage"
+        },
+        {// Contributing
+        type: "input",
+        message: "Any collaborators you would like to acknowledge?",
+        name: "credit"
+        },
+        {
+        type: "input",
+        message: "Do you want to add a license?",
+        name: "license"
+        }])
+    }
 
-// function init() {
+    function generateReadMe(answers) {
+        return `
+# Your Project Title= ${answers.title}
 
-// }
+## Description 
+        ${answers.description}
+        
+## Table of Contents 
+        ${answers.table}
+        
+        
+ * [Installation](#install)
+ * [Usage](#usage)
+ * [Credits](#credit)
+ * [License](#license)
+ * [Badges](#badge)
+ * [Contributers](#credit)
+        
+        
+## Installation
+        ${answers.install}
+        
+## Usage 
+        ${answers.usage}
+        
+## Credits
+        ${answers.credit}
+        
+## License
+        ${answers.license}
+        
+## Badges
+        
+        ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+        
+        
+## Contributing
+        `
+    
+    }
+    
+    promptUser()
+  .then(function(answers) {
+    const txt = generateReadMe(answers);
 
-// init();
-const fs = recquire('fs')
-const inquirer = recquire('inquirer')
-const axios = recquire('axios')
-
-inquirer
-.prompt({//user's GitHub profile
-    type: input,
-    message: "What is your GitHub username?",
-    name: "username"
-},
-{// The generated README includes the user's email.
-    type: input,
-    message: "What is your email?",
-    name: "email"
-},
-{// Title
-    type: input,
-    message: "What would you like for the title?",
-    name:"title"
-},
-{//repo name
-    type: input,
-    message: "What is the name of the repo?",
-    name: "repo"
-},
-{//Description
-    type: input,
-    message: "Please put a description about your project.",
-    name: "description"
-},
-{//Usage
-    type:input,
-    message:"Please write how you would use your app.",
-    name: "usage"
-},
-{// Contributing
-    type: input,
-    message:"Any collaborators you would like to acknowledge?",
-    name: "credit"
-}).then(function({username, email, title,repo,description,usage,credit}){
-    const queryUrl= `https:api.github.com/users/${username}`
-    const email= res.data.email
-    const title= res.data.title
-    const repo= res.data.repo
-
-
-
-})
+    return writeFileAsync("test.md", txt);
+  })
+  .then(function() {
+    console.log("Successfully wrote to test.md");
+  })
+  .catch(function(err) {
+    console.log(err);
+  });
+   
+        //     const queryUrl = `https:api.github.com/users/${username}`
+        
 
 // The generated README includes a bio image from the .
 
