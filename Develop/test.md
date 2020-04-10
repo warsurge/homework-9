@@ -1,12 +1,12 @@
 
 # Made by warsurge 
 
-## ads
+## homework-9
 
-# asd
+# README Generator
 
 ## Description 
-ads
+generating readme
         
 ## Table of Contents 
 * [Installation](#installation) 
@@ -21,21 +21,21 @@ undefined
 
         
 ## Installation
-asd
+GO to terminal, type in node index.js
         
 ## Usage 
-sad
+follow the prompts
         
 ## Credits
-as
+
         
 ## License
-MIT License
+ GNU GENERAL PUBLIC LICENSE
         
 ## Badges
         
-![static]https://img.shields.io/static/v1?label=MadeWithLove&message=love&color=red
+https://img.shields.io/static/v1?label=MadeWithLove&message=love&color=red
         
         
 ## Contributing
-as       
+       
