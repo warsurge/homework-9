@@ -1,40 +1,40 @@
 
-# Made by warsurge 
+# Made by  
 
-## homework-9
+## 
 
-# README Generator
+# 
 
 ## Description 
-generating readme
+
         
 ## Table of Contents 
-* [Installation](#installation) 
+undefined 
 
-* [Usage](#usage) 
+undefined 
 
-* [Credits](#credit) 
+undefined 
 
-* [License](#license) 
+undefined 
 
 undefined 
 
         
 ## Installation
-GO to terminal, type in node index.js
+
         
 ## Usage 
-follow the prompts
+
         
 ## Credits
 
         
 ## License
- GNU GENERAL PUBLIC LICENSE
+MIT License
         
 ## Badges
         
-https://img.shields.io/static/v1?label=MadeWithLove&message=love&color=red
+<img src= "https://img.shields.io/static/v1?label=MadeWithLove&message=love&color=red" alt="badge" style="border-radius:50px" width ="150px"/>
         
         
 ## Contributing

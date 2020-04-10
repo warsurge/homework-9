@@ -102,7 +102,7 @@ ${answers.license}
         
 ## Badges
         
-https://img.shields.io/static/v1?label=MadeWithLove&message=${answers.badge}&color=red
+<img src= "https://img.shields.io/static/v1?label=MadeWithLove&message=${answers.badge}&color=red" alt="badge" style="border-radius:50px" width ="150px"/>
         
         
 ## Contributing
